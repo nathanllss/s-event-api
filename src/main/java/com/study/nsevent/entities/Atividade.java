@@ -16,7 +16,7 @@ public class Atividade {
     private String nome;
     @Column(columnDefinition = "TEXT")
     private String descricao;
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private Double preco;
 
     @ManyToOne
@@ -24,7 +24,7 @@ public class Atividade {
     private Categoria categoria;
 
     @OneToMany(mappedBy = "atividade", cascade = CascadeType.ALL)
-    private Set<Bloco> blocos;
+    private Set<Bloco> blocos = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
