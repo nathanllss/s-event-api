@@ -14,7 +14,9 @@ public class Atividade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
+    @Column(columnDefinition = "TEXT")
     private String descricao;
+    @Column(nullable = false)
     private Double preco;
 
     @ManyToOne
